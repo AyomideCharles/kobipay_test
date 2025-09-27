@@ -36,7 +36,7 @@ class TransactionListScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Transactions History'),
+        title: const Text('History'),
         centerTitle: true,
       ),
       body: txState.when(
@@ -85,15 +85,16 @@ class TransactionListScreen extends ConsumerWidget {
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.primary)),
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8.h),
                       Center(
                         child: Text('Production Company',
                             style: TextStyle(
+                              fontWeight: FontWeight.w500,
                               color: AppColors.primary,
                               fontSize: 16.sp,
                             )),
                       ),
-                      SizedBox(height: 16.h),
+                      SizedBox(height: 24.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -157,7 +158,7 @@ class TransactionListScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 18),
+                SizedBox(height: 30.h),
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: Text(
@@ -178,8 +179,7 @@ class TransactionListScreen extends ConsumerWidget {
 
                   return StaggeredFadeIn(
                     index: index,
-                    duration: const Duration(milliseconds: 550),
-                    delayBetween: const Duration(milliseconds: 400),
+                    animateOnce: true,
                     child: TransactionCard(
                       tx: tx,
                       onTap: () {

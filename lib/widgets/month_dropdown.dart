@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kobipayy/core/constants.dart';
 
 class MonthDropdown extends StatelessWidget {
@@ -16,7 +17,7 @@ class MonthDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         boxShadow: const [
           BoxShadow(
@@ -26,7 +27,7 @@ class MonthDropdown extends StatelessWidget {
           ),
         ],
         color: Colors.white,
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(

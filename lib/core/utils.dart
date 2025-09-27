@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:kobipayy/core/constants.dart';
 
@@ -17,16 +18,15 @@ Widget currencyText(double total, String currency) {
       children: [
         TextSpan(
           text: formatted.replaceAll(symbol, ""),
-          style: TextStyle(
+          style: GoogleFonts.fahkwang(
             color: AppColors.primary,
-            fontSize: 28.sp, 
+            fontSize: 22.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
         TextSpan(
           text: " $symbol",
-          style: TextStyle(
-            fontFamily: 'fahkwang',
+          style: GoogleFonts.fahkwang(
             color: AppColors.secondary,
             fontSize: 20.sp,
             fontWeight: FontWeight.w500,

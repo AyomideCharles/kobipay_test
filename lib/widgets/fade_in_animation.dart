@@ -6,36 +6,50 @@ class StaggeredFadeIn extends StatefulWidget {
   final int index;
   final Duration duration;
   final Duration delayBetween;
+  final bool animateOnce;
 
   const StaggeredFadeIn({
     super.key,
     required this.child,
     required this.index,
-    this.duration = const Duration(milliseconds: 400),
-    this.delayBetween = const Duration(milliseconds: 100),
+    this.duration = const Duration(milliseconds: 500),
+    this.delayBetween = const Duration(milliseconds: 200),
+    this.animateOnce = true,
   });
 
   @override
-  _StaggeredFadeInState createState() => _StaggeredFadeInState();
+  State<StaggeredFadeIn> createState() => _StaggeredFadeInState();
 }
 
 class _StaggeredFadeInState extends State<StaggeredFadeIn>
     with SingleTickerProviderStateMixin {
   late final AnimationController _ctrl;
-  late final Animation<double> _opacity;
-  late final Animation<Offset> _slide;
+  bool _didAnimate = false;
 
   @override
   void initState() {
     super.initState();
     _ctrl = AnimationController(vsync: this, duration: widget.duration);
-    _opacity = CurvedAnimation(parent: _ctrl, curve: Curves.easeIn);
-    _slide = Tween<Offset>(begin: const Offset(0, 0.08), end: Offset.zero)
-        .animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOut));
 
-    Future.delayed(widget.delayBetween * widget.index, () {
-      if (mounted) _ctrl.forward();
-    });
+    if (widget.animateOnce) {
+      Future.delayed(widget.delayBetween * widget.index, () {
+        if (mounted) {
+          _ctrl.forward();
+          _didAnimate = true;
+        }
+      });
+    } else {
+      _ctrl.forward();
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant StaggeredFadeIn oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!widget.animateOnce || !_didAnimate) {
+      _ctrl.forward();
+      _didAnimate = true;
+    }
   }
 
   @override
@@ -47,9 +61,12 @@ class _StaggeredFadeInState extends State<StaggeredFadeIn>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
-      opacity: _opacity,
+      opacity: _ctrl,
       child: SlideTransition(
-        position: _slide,
+        position: Tween<Offset>(
+          begin: const Offset(0, 0.08),
+          end: Offset.zero,
+        ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOut)),
         child: widget.child,
       ),
     );

@@ -7,7 +7,7 @@ class TransactionService {
   const TransactionService();
 
   Future<List<TransactionModel>> fetchTransactionsFromAssets() async {
-    await Future.delayed(const Duration(milliseconds: 800));
+    await Future.delayed(const Duration(milliseconds: 1800));
     final response = await rootBundle.loadString(AppConfig.mockTransaction);
     final List<dynamic> jsonList = json.decode(response);
     return jsonList
