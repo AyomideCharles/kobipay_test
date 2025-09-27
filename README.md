@@ -3,7 +3,7 @@
 A Flutter demo app to view, filter, and analyze transactions. It loads data from a mock API (local JSON), supports filtering by month, and includes smooth animations & charts.
 
 # Set up instructions
-- git clone https://github.com/your-username/transactions-app.git
+- git clone https://github.com/AyomideCharles/kobipay_test.git
 - cd transactions-app
 - flutter pub get (to install dependencies)
 - flutter run
