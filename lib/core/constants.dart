@@ -6,4 +6,6 @@ class AppColors {
   static const background = Color(0xFFF5F5F5);
 }
 
-
+class AppConfig {
+  static const String mockTransaction = "assets/transactions.json";
+}

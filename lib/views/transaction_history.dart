@@ -5,6 +5,7 @@ import 'package:kobipayy/core/constants.dart';
 import 'package:kobipayy/core/utils.dart';
 import 'package:kobipayy/widgets/data_chart.dart';
 import 'package:kobipayy/widgets/fade_in_animation.dart';
+import 'package:kobipayy/widgets/month_dropdown.dart';
 import 'package:kobipayy/widgets/transaction_card.dart';
 import 'package:kobipayy/views/transaction_details.dart';
 import '../providers/transaction_providers.dart';
@@ -106,29 +107,51 @@ class TransactionListScreen extends ConsumerWidget {
                               ),
                             ],
                           ),
-                          DropdownButton<String>(
-                            dropdownColor: AppColors.background,
-                            value: selectedMonth,
-                            items: ["All", ...monthNames]
-                                .map((month) => DropdownMenuItem(
-                                      value: month,
-                                      child: Text(month),
-                                    ))
-                                .toList(),
-                            onChanged: (value) {
-                              if (value != null) {
-                                ref.read(monthFilterProvider.notifier).state =
-                                    value;
-                              }
-                            },
-                          ),
+                          MonthDropdown(
+                              selectedMonth: selectedMonth,
+                              months: const ["All", ...monthNames],
+                              onChanged: (value) {
+                                if (value != null) {
+                                  ref.read(monthFilterProvider.notifier).state =
+                                      value;
+                                }
+                              }),
                         ],
                       ),
                       SizedBox(height: 18.h),
                       SizedBox(
                         height: 200,
-                        child: ExpenseChart(
-                          transactions: list,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            ExpenseChart(
+                              transactions: list,
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  formatCurrency(total,
+                                      currency: list.isNotEmpty
+                                          ? list.first.currency
+                                          : 'USD'),
+                                  style: TextStyle(
+                                    fontSize: 20.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.primary,
+                                  ),
+                                ),
+                                Text(
+                                  'Netflix Expenses',
+                                  style: TextStyle(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.primary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ],

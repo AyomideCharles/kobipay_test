@@ -42,10 +42,7 @@ class TransactionCard extends StatelessWidget {
                     Text(
                       DateFormat.yMMMd().format(tx.date),
                       style: TextStyle(fontSize: 11.sp),
-                    )
-                    // Text(
-                    //     '${tx.category} • ${DateFormat.yMMMd().format(tx.date)}',
-                    //     style: Theme.of(context).textTheme.bodySmall),
+                    ),
                   ],
                 ),
               ),
@@ -56,11 +53,6 @@ class TransactionCard extends StatelessWidget {
                     formatCurrency(tx.amount),
                     style: const TextStyle(color: AppColors.secondary),
                   ),
-                  const SizedBox(height: 6),
-                  // Text(tx.status,
-                  //     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  //         color:
-                  //             tx.status == 'Refunded' ? Colors.green : null)),
                 ],
               )
             ],

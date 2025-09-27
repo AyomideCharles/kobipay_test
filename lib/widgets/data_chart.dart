@@ -30,7 +30,7 @@ class ExpenseChart extends StatelessWidget {
         legendTextStyle: TextStyle(fontWeight: FontWeight.w500),
       ),
       chartValuesOptions: const ChartValuesOptions(
-        showChartValues: true,
+        showChartValues: false,
         showChartValuesInPercentage: false,
         decimalPlaces: 2,
       ),

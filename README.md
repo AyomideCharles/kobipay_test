@@ -1,16 +1,38 @@
 # kobipayy
 
-A new Flutter project.
+A Flutter demo app to view, filter, and analyze transactions. It loads data from a mock API (local JSON), supports filtering by month, and includes smooth animations & charts.
 
-## Getting Started
+# Set up instructions
+- git clone https://github.com/your-username/transactions-app.git
+- cd transactions-app
+- flutter pub get (to install dependencies)
+- flutter run
 
-This project is a starting point for a Flutter application.
+# Features
+- Loads transactions from API
+- Filter transactions by month
+- Pull to refreesh transaction list
+- Transaction details screen with a refund button
+- Expense chart showing total amount
 
-A few resources to get you started if this is your first Flutter project:
+# Libraries used
+- Flutter riverpod
+- Flutter screenutil
+- intl
+- pie_chart
+- google fonts
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Design and State management
+- Riverpod
+- lib/
+ ├── core/            
+ ├── models/            
+ ├── providers/         
+ ├── services/          
+ ├── widgets/           
+ └── views/   
+
+
+ # Api simulation
+ - Transactions are loaded from a local JSON file inside the assets folder
