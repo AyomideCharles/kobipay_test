@@ -1,0 +1,122 @@
+[
+  {
+    "id": "t1",
+    "merchant": "Coffee House",
+    "merchantImage": "https://picsum.photos/seed/coffee/200",
+    "amount": 4.5,
+    "currency": "CAD",
+    "date": "2025-09-20T09:12:00Z",
+    "method": "Interac",
+    "status": "Completed",
+    "category": "Food & Drink",
+    "note": "Latte"
+  },
+  {
+    "id": "t2",
+    "merchant": "Grocery Store",
+    "merchantImage": "https://picsum.photos/seed/grocery/200",
+    "amount": 54.3,
+    "currency": "CAD",
+    "date": "2025-09-19T18:22:00Z",
+    "method": "Card",
+    "status": "Completed",
+    "category": "Groceries",
+    "note": "Weekly groceries"
+  },
+  {
+    "id": "t3",
+    "merchant": "Online Store",
+    "merchantImage": "https://picsum.photos/seed/online/200",
+    "amount": 120.0,
+    "currency": "CAD",
+    "date": "2025-08-10T12:00:00Z",
+    "method": "Card",
+    "status": "Refunded",
+    "category": "Shopping",
+    "note": "Shoes"
+  },
+  {
+    "id": "t4",
+    "merchant": "Bookstore",
+    "merchantImage": "https://picsum.photos/seed/bookstore/200",
+    "amount": 32.5,
+    "currency": "CAD",
+    "date": "2025-07-05T15:30:00Z",
+    "method": "Cash",
+    "status": "Completed",
+    "category": "Education",
+    "note": "Programming book"
+  },
+  {
+    "id": "t5",
+    "merchant": "Restaurant",
+    "merchantImage": "https://picsum.photos/seed/restaurant/200",
+    "amount": 78.9,
+    "currency": "CAD",
+    "date": "2025-09-10T20:00:00Z",
+    "method": "Card",
+    "status": "Completed",
+    "category": "Food & Drink",
+    "note": "Dinner with friends"
+  },
+  {
+    "id": "t6",
+    "merchant": "Gym Membership",
+    "merchantImage": "https://picsum.photos/seed/gym/200",
+    "amount": 49.99,
+    "currency": "CAD",
+    "date": "2025-06-01T08:00:00Z",
+    "method": "Interac",
+    "status": "Completed",
+    "category": "Health & Fitness",
+    "note": "Monthly subscription"
+  },
+  {
+    "id": "t7",
+    "merchant": "Electronics Shop",
+    "merchantImage": "https://picsum.photos/seed/electronics/200",
+    "amount": 899.0,
+    "currency": "CAD",
+    "date": "2025-09-15T11:45:00Z",
+    "method": "Card",
+    "status": "Completed",
+    "category": "Shopping",
+    "note": "New phone"
+  },
+  {
+    "id": "t8",
+    "merchant": "Pharmacy",
+    "merchantImage": "https://picsum.photos/seed/pharmacy/200",
+    "amount": 22.75,
+    "currency": "CAD",
+    "date": "2025-08-25T14:10:00Z",
+    "method": "Cash",
+    "status": "Completed",
+    "category": "Health",
+    "note": "Vitamins"
+  },
+  {
+    "id": "t9",
+    "merchant": "Cinema",
+    "merchantImage": "https://picsum.photos/seed/cinema/200",
+    "amount": 30.0,
+    "currency": "CAD",
+    "date": "2025-09-05T21:00:00Z",
+    "method": "Card",
+    "status": "Completed",
+    "category": "Entertainment",
+    "note": "Movie tickets"
+  },
+  {
+    "id": "t10",
+    "merchant": "Taxi Service",
+    "merchantImage": "https://picsum.photos/seed/taxi/200",
+    "amount": 18.2,
+    "currency": "CAD",
+    "date": "2025-07-22T19:40:00Z",
+    "method": "Interac",
+    "status": "Completed",
+    "category": "Transport",
+    "note": "Ride home"
+  }
+]
